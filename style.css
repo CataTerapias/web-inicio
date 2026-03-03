@@ -2,8 +2,9 @@
    PALETA DE COLORES Y AJUSTES GLOBALES
    ========================================= */
 :root {
-    --color-fondo-principal: #f2f4f6; /* Tono cielo suave del inicio y formulario */
-    --color-oliva-oscuro: #5a5215;
+    --color-fondo-principal: #f2f4f6; /* Tono cielo suave */
+    --color-lila-suave: #cebdd6; /* NUEVO: Lila pastel relajante */
+    --color-texto-oscuro: #544d41; /* Marrón/gris suave para buena lectura */
     --color-rosa-suave: #dcc8c6;
     --color-crema: #e2dcc7;
     --color-texto-claro: #faf9f6;
@@ -11,7 +12,6 @@
     --fuente-texto: 'Arial', sans-serif;
 }
 
-/* Efecto de deslizamiento suave para toda la página */
 html {
     scroll-behavior: smooth;
 }
@@ -24,7 +24,7 @@ html {
 
 body {
     font-family: var(--fuente-texto);
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     line-height: 1.6;
 }
 
@@ -51,7 +51,7 @@ header h2 {
 
 nav a {
     text-decoration: none;
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     margin: 0 15px;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -74,7 +74,7 @@ nav a {
     width: 300px;
     height: 450px;
     background-color: #ccc;
-    border-radius: 150px 150px 0 0; /* Forma de arco */
+    border-radius: 150px 150px 0 0;
     object-fit: cover;
 }
 
@@ -94,24 +94,27 @@ nav a {
 }
 
 .btn {
-    background-color: var(--color-oliva-oscuro);
-    color: var(--color-texto-claro);
+    background-color: var(--color-lila-suave); /* Botón lila */
+    color: var(--color-texto-oscuro);
     padding: 15px 30px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: bold;
     letter-spacing: 2px;
     border-radius: 25px;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .btn:hover {
-    background-color: #3a350d;
+    background-color: #bfa8c7; /* Lila un poco más intenso al pasar el mouse */
+    transform: translateY(-2px);
 }
 
 /* =========================================
-   3. SECCIÓN SOBRE MÍ
+   3. SECCIÓN SOBRE MÍ Y POLAROID
    ========================================= */
 .sobre-mi {
     display: flex;
@@ -144,51 +147,59 @@ nav a {
 /* --- EL PAPEL FOTOGRÁFICO --- */
 .marco-polaroid {
     background-color: white;
-    /* Padding disparejo: más espacio abajo, como una polaroid real */
     padding: 15px 15px 40px 15px; 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Sombra profunda */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10); 
     position: relative; 
-    transform: rotate(-3deg); /* Inclinamos un poquito la foto completa */
+    transform: rotate(-3deg); 
     width: 70%; 
     max-width: 350px;
 }
 
-/* --- LA IMAGEN DENTRO DEL PAPEL --- */
 .sobre-mi-img {
-    width: 100%; /* La imagen ahora se adapta al 100% de su papel */
+    width: 100%; 
     height: auto;
     aspect-ratio: 3/4;
     object-fit: cover;
-    display: block; /* Quita un espacio en blanco fantasma debajo de las imágenes */
+    display: block; 
 }
 
-/* --- LA CINTA ADHESIVA (WASHI TAPE) --- */
+/* --- LA CINTA ADHESIVA CON FLORES (WASHI TAPE) --- */
 .marco-polaroid::before {
-    content: "";
+    content: ""; 
     position: absolute;
-    top: -15px; /* Sube la cinta fuera del papel */
-    left: -25px; /* Mueve la cinta a la izquierda */
+    top: -15px; 
+    left: -25px; 
     width: 130px; 
     height: 35px; 
-    
-    /* Color verde/grisáceo de tu referencia */
-    background-color: #92a8a1; 
-    opacity: 0.85; 
-    transform: rotate(-20deg); /* Ángulo de la cinta */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: var(--color-lila-suave); /* Cinta lila */
+    opacity: 0.9; 
+    transform: rotate(-20deg); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); 
     z-index: 2; 
     
-    /* Textura de puntitos blancos para que parezca washi tape real */
-    background-image: radial-gradient(white 15%, transparent 16%);
-    background-size: 12px 12px;
+    /* Textura de pequeñas flores blancas */
+    background-image: 
+        radial-gradient(white 20%, transparent 21%), 
+        radial-gradient(white 20%, transparent 21%), 
+        radial-gradient(white 20%, transparent 21%), 
+        radial-gradient(white 20%, transparent 21%), 
+        radial-gradient(white 20%, transparent 21%); 
+    background-position: 
+        0 0, 
+        0 -6px, 
+        0 6px, 
+        -6px 0, 
+        6px 0; 
+    background-size: 15px 15px; 
+    background-repeat: repeat; 
 }
 
 /* =========================================
-   4. SECCIÓN ENFOQUE CLÍNICO Y TARJETAS
+   4. SECCIÓN ENFOQUE CLÍNICO Y TARJETAS (PC)
    ========================================= */
 .enfoque-clinico {
-    background-color: var(--color-oliva-oscuro);
-    color: var(--color-texto-claro);
+    background-color: var(--color-lila-suave); /* Fondo lila suave */
+    color: var(--color-texto-oscuro); 
     padding: 80px 50px;
     text-align: center;
 }
@@ -210,9 +221,8 @@ nav a {
     flex-wrap: wrap;
 }
 
-/* Tarjetas base PC */
 .servicio-card {
-    border: 1px solid var(--color-crema);
+    border: 1px solid var(--color-texto-claro); 
     padding: 40px 20px;
     width: 250px;
     text-align: center;
@@ -224,17 +234,16 @@ nav a {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Efectos hover/active SOLO para PC (para no ensuciar el móvil) */
 @media (min-width: 769px) {
     .servicio-card:hover {
         transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        background-color: rgba(226, 220, 199, 0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        background-color: rgba(255, 255, 255, 0.3); 
     }
     
     .servicio-card:active {
         transform: scale(0.98);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -250,17 +259,77 @@ nav a {
     margin-bottom: 0;
 }
 
-/* Ocultar los puntos indicadores del slider en PC */
 .slider-dots {
-    display: none;
+    display: none; 
+}
+/* =========================================
+   NUEVA SECCIÓN: MODALIDAD DE ATENCIÓN
+   ========================================= */
+.modalidad {
+    background-color: var(--color-crema); /* Usamos el crema para contrastar suavemente entre el lila y el celeste */
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.modalidad h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.modalidad-sub {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.modalidad-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.modalidad-card {
+    background-color: var(--color-texto-claro);
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.modalidad-card:hover {
+    transform: translateY(-5px);
+}
+
+.modalidad-card .icono {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.modalidad-card h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modalidad-duracion {
+    background-color: var(--color-texto-claro);
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: 2px dashed var(--color-lila-suave); /* Borde punteado lila para que combine con arriba */
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 /* =========================================
    5. SECCIÓN CONTACTO (FORMSPREE)
    ========================================= */
 .contacto {
-    background-color: var(--color-fondo-principal); /* Tono cielo suave */
-    color: var(--color-oliva-oscuro);
+    background: linear-gradient(to bottom, #dbe4ea, #f5ebd9);
+    color: var(--color-texto-oscuro);
     padding: 80px 50px;
     display: flex;
     justify-content: center;
@@ -300,16 +369,16 @@ nav a {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
 }
 
 .campo input, 
 .campo textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid var(--color-oliva-oscuro);
+    border: 1px solid rgba(84, 77, 65, 0.3); 
     background-color: var(--color-texto-claro);
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     font-family: var(--fuente-texto);
     font-size: 1rem;
     border-radius: 8px;
@@ -319,8 +388,8 @@ nav a {
 
 .campo input:focus, 
 .campo textarea:focus {
-    border-color: #3a350d;
-    box-shadow: 0 0 8px rgba(90, 82, 21, 0.2);
+    border-color: var(--color-lila-suave); /* Borde lila al escribir */
+    box-shadow: 0 0 8px rgba(206, 189, 214, 0.5); /* Sombra lila */
 }
 
 .btn-enviar {
@@ -331,25 +400,26 @@ nav a {
     font-family: var(--fuente-texto);
     font-weight: bold;
     padding: 15px 30px;
-    background-color: var(--color-oliva-oscuro);
-    color: var(--color-texto-claro);
+    background-color: var(--color-lila-suave);
+    color: var(--color-texto-oscuro);
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     letter-spacing: 2px;
     border-radius: 25px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-enviar:hover {
-    background-color: #3a350d;
+    background-color: #bfa8c7;
+    transform: translateY(-2px);
 }
 
 /* =========================================
    6. PIE DE PÁGINA (FOOTER)
    ========================================= */
 .footer {
-    background-color: var(--color-rosa-suave); /* Combina con el header */
-    color: var(--color-oliva-oscuro);
+    background-color: var(--color-rosa-suave); 
+    color: var(--color-texto-oscuro);
     padding: 60px 50px 20px 50px;
     text-align: center;
 }
@@ -368,12 +438,12 @@ nav a {
 .footer-info h3 {
     font-size: 1.8rem;
     margin-bottom: 5px;
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
 }
 
 .footer-info p {
     font-size: 1rem;
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
 }
 
 .footer-enlaces, .footer-sociales {
@@ -384,7 +454,7 @@ nav a {
 }
 
 .footer-enlaces a, .footer-sociales a {
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     text-decoration: none;
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -397,17 +467,17 @@ nav a {
 }
 
 .footer-legal {
-    border-top: 1px solid rgba(90, 82, 21, 0.2); 
+    border-top: 1px solid rgba(84, 77, 65, 0.15); 
     padding-top: 20px;
     font-size: 0.85rem;
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 .link-agencia {
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
@@ -435,17 +505,17 @@ nav a {
     border-radius: 15px;
     text-align: center;
     max-width: 500px;
-    box-shadow: 0 15px 30px rgba(90, 82, 21, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
 }
 
 .gracias-tarjeta h1 {
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .gracias-tarjeta p {
-    color: var(--color-oliva-oscuro);
+    color: var(--color-texto-oscuro);
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
@@ -454,43 +524,46 @@ nav a {
    8. RESPONSIVIDAD (CELULARES)
    ========================================= */
 @media (max-width: 768px) {
-    /* Ajustes generales */
     .hero, .sobre-mi {
         flex-direction: column;
     }
+    
     .sobre-mi-texto, .sobre-mi-img-container {
         width: 100%;
     }
+    
     header {
         flex-direction: column;
         gap: 15px;
     }
+    
     .contacto {
         padding: 60px 20px;
     }
     
-    /* --- EL TRUCO PARA QUE EL SLIDER TOQUE LOS BORDES --- */
-    .enfoque-clinico {
-        padding: 60px 0; /* Le quitamos el espaciado lateral a la caja verde completa */
-    }
-    .enfoque-clinico h2, 
-    .enfoque-clinico p {
-        padding: 0 20px; /* Le devolvemos el espaciado solo a los textos para que no choquen con la pantalla */
-    }
-
     .footer-contenido {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+    
     .footer-enlaces, .footer-sociales {
         text-align: center;
     }
 
-    /* Magia del Slider para Móvil */
+    /* --- SLIDER MÓVIL ESTILO S&F ATELIER --- */
     .slider-contenedor {
         width: 100%;
         overflow: hidden;
+    }
+
+    .enfoque-clinico {
+        padding: 60px 0; 
+    }
+    
+    .enfoque-clinico h2, 
+    .enfoque-clinico p {
+        padding: 0 20px; 
     }
 
     .servicios-grid {
@@ -501,8 +574,9 @@ nav a {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 15px; 
-        padding: 20px; /* Margen para que la primera tarjeta no esté pegada al borde, pero el riel llegue al final */
-        scroll-padding-left: 20px; 
+        
+        padding: 40px 10%; 
+        scroll-padding: 0 10%; 
         scrollbar-width: none; 
     }
     
@@ -512,15 +586,14 @@ nav a {
 
     .servicio-card {
         flex: 0 0 80%; 
-        scroll-snap-align: start; 
+        scroll-snap-align: center; 
         transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
 
-    /* Zoom a la tarjeta en turno */
     .servicio-card.activa {
         transform: scale(1.05); 
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
-        background-color: rgba(226, 220, 199, 0.1); 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); 
+        background-color: rgba(255, 255, 255, 0.4); 
     }
 
     /* Puntos del Slider */
@@ -528,21 +601,32 @@ nav a {
         display: flex;
         justify-content: center;
         gap: 8px;
-        margin-top: 15px;
+        margin-top: 5px; 
     }
 
     .dot {
         width: 10px;
         height: 10px;
-        background-color: var(--color-crema);
+        background-color: var(--color-texto-oscuro);
         border-radius: 50%;
-        opacity: 0.5;
-        transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s;
+        opacity: 0.2; 
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .dot.active {
-        opacity: 1;
-        background-color: var(--color-texto-claro);
+        opacity: 0.8; 
         transform: scale(1.2);
     }
 }
+/* Ajustes Modalidad para celular */
+    .modalidad {
+        padding: 60px 20px;
+    }
+    .modalidad-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .modalidad-duracion {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
