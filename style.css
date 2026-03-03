@@ -141,13 +141,46 @@ nav a {
     padding: 50px;
 }
 
+/* --- EL PAPEL FOTOGRÁFICO --- */
+.marco-polaroid {
+    background-color: white;
+    /* Padding disparejo: más espacio abajo, como una polaroid real */
+    padding: 15px 15px 40px 15px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Sombra profunda */
+    position: relative; 
+    transform: rotate(-3deg); /* Inclinamos un poquito la foto completa */
+    width: 70%; 
+    max-width: 350px;
+}
+
+/* --- LA IMAGEN DENTRO DEL PAPEL --- */
 .sobre-mi-img {
-    width: 70%;
+    width: 100%; /* La imagen ahora se adapta al 100% de su papel */
     height: auto;
     aspect-ratio: 3/4;
-    background-color: #ccc;
     object-fit: cover;
-    border: 5px solid white; /* Borde estilo foto polaroid */
+    display: block; /* Quita un espacio en blanco fantasma debajo de las imágenes */
+}
+
+/* --- LA CINTA ADHESIVA (WASHI TAPE) --- */
+.marco-polaroid::before {
+    content: "";
+    position: absolute;
+    top: -15px; /* Sube la cinta fuera del papel */
+    left: -25px; /* Mueve la cinta a la izquierda */
+    width: 130px; 
+    height: 35px; 
+    
+    /* Color verde/grisáceo de tu referencia */
+    background-color: #92a8a1; 
+    opacity: 0.85; 
+    transform: rotate(-20deg); /* Ángulo de la cinta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 2; 
+    
+    /* Textura de puntitos blancos para que parezca washi tape real */
+    background-image: radial-gradient(white 15%, transparent 16%);
+    background-size: 12px 12px;
 }
 
 /* =========================================
@@ -435,6 +468,16 @@ nav a {
     .contacto {
         padding: 60px 20px;
     }
+    
+    /* --- EL TRUCO PARA QUE EL SLIDER TOQUE LOS BORDES --- */
+    .enfoque-clinico {
+        padding: 60px 0; /* Le quitamos el espaciado lateral a la caja verde completa */
+    }
+    .enfoque-clinico h2, 
+    .enfoque-clinico p {
+        padding: 0 20px; /* Le devolvemos el espaciado solo a los textos para que no choquen con la pantalla */
+    }
+
     .footer-contenido {
         flex-direction: column;
         align-items: center;
@@ -452,32 +495,32 @@ nav a {
 
     .servicios-grid {
         display: flex;
-        justify-content: flex-start; /* Primera tarjeta pegada a la izquierda */
+        justify-content: flex-start; 
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 15px; 
-        padding: 20px; 
-        scroll-padding-left: 20px; /* Para que el snap frene donde corresponde */
-        scrollbar-width: none; /* Firefox */
+        padding: 20px; /* Margen para que la primera tarjeta no esté pegada al borde, pero el riel llegue al final */
+        scroll-padding-left: 20px; 
+        scrollbar-width: none; 
     }
     
     .servicios-grid::-webkit-scrollbar {
-        display: none; /* Chrome y Safari */
+        display: none; 
     }
 
     .servicio-card {
-        flex: 0 0 80%; /* Achicamos a 80% para que se vea la esquinita de la 2 */
-        scroll-snap-align: start; /* Se alinea a la izquierda al soltar el dedo */
+        flex: 0 0 80%; 
+        scroll-snap-align: start; 
         transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
 
-    /* ESTA ES LA CLASE QUE DA EL ZOOM A LA TARJETA EN TURNO */
+    /* Zoom a la tarjeta en turno */
     .servicio-card.activa {
-        transform: scale(1.05); /* El famoso zoom */
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
-        background-color: rgba(226, 220, 199, 0.1); /* Fondo crema sutil */
+        transform: scale(1.05); 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+        background-color: rgba(226, 220, 199, 0.1); 
     }
 
     /* Puntos del Slider */
