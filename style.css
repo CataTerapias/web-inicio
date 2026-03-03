@@ -1,0 +1,278 @@
+/* Paleta de colores basada en la imagen */
+:root {
+    --color-fondo-principal: #f2f4f6; /* Tono cielo suave del inicio */
+    --color-oliva-oscuro: #5a5215;
+    --color-rosa-suave: #dcc8c6;
+    --color-crema: #e2dcc7;
+    --color-texto-claro: #faf9f6;
+    --fuente-titulos: 'Georgia', serif;
+    --fuente-texto: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    color: var(--color-oliva-oscuro);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: normal;
+}
+
+/* Navegación */
+header {
+    background-color: var(--color-rosa-suave);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-oliva-oscuro);
+    margin: 0 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Sección Inicio (Hero) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    background: linear-gradient(to bottom, #dbe4ea, #f5ebd9);
+    gap: 50px;
+}
+
+.hero-img {
+    width: 300px;
+    height: 450px;
+    background-color: #ccc;
+    border-radius: 150px 150px 0 0; /* Forma de arco */
+    object-fit: cover;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.btn {
+    background-color: var(--color-oliva-oscuro);
+    color: var(--color-texto-claro);
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+/* Sección Sobre Mí */
+.sobre-mi {
+    display: flex;
+    min-height: 500px;
+}
+
+.sobre-mi-texto {
+    background-color: var(--color-rosa-suave);
+    width: 50%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-mi-texto h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.sobre-mi-img-container {
+    background-color: var(--color-crema);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.sobre-mi-img {
+    width: 70%;
+    height: auto;
+    aspect-ratio: 3/4;
+    background-color: #ccc;
+    object-fit: cover;
+    border: 5px solid white; /* Borde estilo foto */
+}
+
+/* Sección Enfoque Clínico */
+.enfoque-clinico {
+    background-color: var(--color-oliva-oscuro);
+    color: var(--color-texto-claro);
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.enfoque-clinico h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.enfoque-clinico p {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.servicios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.servicio-card {
+    border: 1px solid var(--color-crema);
+    padding: 40px 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.servicio-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.servicio-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Responsividad básica */
+@media (max-width: 768px) {
+    .hero, .sobre-mi {
+        flex-direction: column;
+    }
+    .sobre-mi-texto, .sobre-mi-img-container {
+        width: 100%;
+    }
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* Sección Contacto (Formspree) */
+.contacto {
+    background-color: var(--color-crema);
+    color: var(--color-oliva-oscuro);
+    padding: 80px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-container {
+    width: 100%;
+    max-width: 600px; /* Ancho ideal para que el formulario no se vea gigante en PC */
+    text-align: center;
+}
+
+.contacto-container h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.contacto-container p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Alineamos las etiquetas a la izquierda */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-oliva-oscuro);
+}
+
+.campo input, 
+.campo textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--color-oliva-oscuro);
+    background-color: var(--color-texto-claro);
+    color: var(--color-oliva-oscuro);
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto visual cuando el usuario hace clic en un campo */
+.campo input:focus, 
+.campo textarea:focus {
+    border-color: #3a350d; /* Oliva más oscuro */
+    box-shadow: 0 0 8px rgba(90, 82, 21, 0.2);
+}
+
+.btn-enviar {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-family: var(--fuente-texto);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #3a350d; /* Oscurece el botón al pasar el mouse */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contacto {
+        padding: 60px 20px;
+    }
+}

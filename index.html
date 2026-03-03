@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicología - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+        </nav>
+        <h2>Catalina Berrios</h2>
+        <nav>
+            <a href="#enfoque">Enfoque</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <img src="https://via.placeholder.com/300x450" alt="Retrato de la psicóloga" class="hero-img">
+        <div class="hero-text">
+            <h1>Bienestar mental que transforma.</h1>
+            <p>Hola, soy Cata, psicóloga clínica. Te acompaño a encontrar claridad, equilibrio y herramientas prácticas para mejorar tu calidad de vida en un espacio seguro y libre de juicios.</p>
+            <a href="#contacto" class="btn">Agenda tu sesión</a>
+        </div>
+    </section>
+
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="sobre-mi-texto">
+            <h2>¡Hola, soy Catalina!</h2>
+            <p>Soy licenciada en Psicología con especialización en [Área de especialidad, ej: Terapia Cognitivo-Conductual]. A lo largo de mi trayectoria, me he dedicado a ayudar a adolescentes y adultos a transitar momentos de ansiedad, depresión y crisis vitales.</p><br>
+            <p>Mi objetivo no es solo escucharte, sino trabajar en equipo contigo para identificar patrones, sanar heridas y construir la vida que deseas vivir. Creo firmemente en la resiliencia humana y en el poder del autoconocimiento.</p>
+        </div>
+        <div class="sobre-mi-img-container">
+            <img src="assets/Sobre mi.jpeg" alt="Foto sobre mí" class="sobre-mi-img">
+        </div>
+    </section>
+
+    <section class="enfoque-clinico" id="enfoque">
+        <h2>Mi Enfoque Clínico</h2>
+        <p>Cada paciente es único, por lo que mi método se adapta a tus necesidades específicas para asegurar un avance real y sostenido.</p>
+        
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <h3>Terapia Individual</h3>
+                <p>Un espacio confidencial para explorar tus emociones, resolver conflictos internos y potenciar tu desarrollo personal.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Gestión de Ansiedad</h3>
+                <p>Herramientas prácticas basadas en evidencia para regular el sistema nervioso y recuperar el control de tus pensamientos.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Acompañamiento Vital</h3>
+                <p>Apoyo estructurado durante duelos, cambios de carrera, rupturas amorosas o transiciones importantes en tu vida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <div class="contacto-container">
+            <h2>Hablemos</h2>
+            <p>Si tienes dudas o quieres dar el primer paso, escríbeme y me pondré en contacto contigo lo antes posible.</p>
+            <form action="https://formspree.io/f/xnjbkgzq" method="POST" class="formulario">
+                
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Pérez" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Número de teléfono (Para confirmar tu cita)</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. +56 9 1234 5678" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="mensaje">¿En qué te puedo ayudar?</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-enviar">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
