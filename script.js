@@ -1,21 +1,17 @@
-// Seleccionamos el formulario usando su clase
+// --- LÓGICA DEL FORMULARIO ---
 const formulario = document.querySelector('.formulario');
 
-// Nos aseguramos de que el formulario exista en la página antes de ejecutar el código
 if (formulario) {
     formulario.addEventListener("submit", async function(event) {
-        event.preventDefault(); // Evita la redirección por defecto de Formspree
+        event.preventDefault(); 
         
-        // Cambiamos el texto del botón mientras se envía
         const boton = formulario.querySelector('.btn-enviar');
         const textoOriginal = boton.innerHTML;
         boton.innerHTML = "Enviando...";
         
-        // Recopilamos los datos ingresados
         const data = new FormData(formulario);
         
         try {
-            // Enviamos los datos a Formspree de forma "invisible"
             const response = await fetch(formulario.action, {
                 method: formulario.method,
                 body: data,
@@ -25,16 +21,53 @@ if (formulario) {
             });
             
             if (response.ok) {
-                // Si Formspree responde que todo está OK, redirigimos a tu página
                 window.location.href = "gracias.html";
-                formulario.reset(); // Limpiamos los campos del formulario
+                formulario.reset(); 
             } else {
                 alert("Hubo un problema al enviar el mensaje. Por favor, revisa los datos e intenta de nuevo.");
-                boton.innerHTML = textoOriginal; // Restauramos el texto del botón
+                boton.innerHTML = textoOriginal; 
             }
         } catch (error) {
             alert("Hubo un problema de conexión. Revisa tu internet.");
-            boton.innerHTML = textoOriginal; // Restauramos el texto del botón
+            boton.innerHTML = textoOriginal; 
         }
     });
+}
+
+// --- LÓGICA PARA EL SLIDER DE TARJETAS (SOLO MÓVIL) ---
+const slider = document.getElementById('slider-servicios');
+const dots = document.querySelectorAll('.dot');
+const cards = document.querySelectorAll('.servicio-card');
+
+if (slider && dots.length > 0 && cards.length > 0) {
+    slider.addEventListener('scroll', () => {
+        const scrollLeft = slider.scrollLeft;
+        
+        // Calculamos el ancho de la tarjeta + los 15px de separación (gap)
+        const cardWidth = cards[0].offsetWidth + 15;
+        
+        // Sabemos exactamente qué tarjeta se está viendo (0, 1 o 2)
+        const index = Math.round(scrollLeft / cardWidth);
+
+        // 1. Sincronizamos los puntitos
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
+        // 2. Sincronizamos el ZOOM con la tarjeta que corresponde al puntito
+        cards.forEach((card, i) => {
+            if (i === index) {
+                card.classList.add('activa'); // Le da el zoom a la que estás viendo
+            } else {
+                card.classList.remove('activa'); // Le quita el zoom a las demás
+            }
+        });
+    });
+
+    // Simulamos un mini scroll al cargar la página para que la Tarjeta 1 parta con zoom
+    setTimeout(() => slider.dispatchEvent(new Event('scroll')), 100);
 }

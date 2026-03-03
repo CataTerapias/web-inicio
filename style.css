@@ -1,6 +1,8 @@
-/* Paleta de colores basada en la imagen */
+/* =========================================
+   PALETA DE COLORES Y AJUSTES GLOBALES
+   ========================================= */
 :root {
-    --color-fondo-principal: #f2f4f6; /* Tono cielo suave del inicio */
+    --color-fondo-principal: #f2f4f6; /* Tono cielo suave del inicio y formulario */
     --color-oliva-oscuro: #5a5215;
     --color-rosa-suave: #dcc8c6;
     --color-crema: #e2dcc7;
@@ -31,7 +33,9 @@ h1, h2, h3 {
     font-weight: normal;
 }
 
-/* Navegación */
+/* =========================================
+   1. NAVEGACIÓN (HEADER)
+   ========================================= */
 header {
     background-color: var(--color-rosa-suave);
     padding: 20px 50px;
@@ -54,7 +58,9 @@ nav a {
     font-weight: bold;
 }
 
-/* Sección Inicio (Hero) */
+/* =========================================
+   2. SECCIÓN INICIO (HERO)
+   ========================================= */
 .hero {
     display: flex;
     align-items: center;
@@ -97,9 +103,16 @@ nav a {
     letter-spacing: 2px;
     border-radius: 25px;
     display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
-/* Sección Sobre Mí */
+.btn:hover {
+    background-color: #3a350d;
+}
+
+/* =========================================
+   3. SECCIÓN SOBRE MÍ
+   ========================================= */
 .sobre-mi {
     display: flex;
     min-height: 500px;
@@ -134,10 +147,12 @@ nav a {
     aspect-ratio: 3/4;
     background-color: #ccc;
     object-fit: cover;
-    border: 5px solid white; /* Borde estilo foto */
+    border: 5px solid white; /* Borde estilo foto polaroid */
 }
 
-/* Sección Enfoque Clínico */
+/* =========================================
+   4. SECCIÓN ENFOQUE CLÍNICO Y TARJETAS
+   ========================================= */
 .enfoque-clinico {
     background-color: var(--color-oliva-oscuro);
     color: var(--color-texto-claro);
@@ -162,7 +177,7 @@ nav a {
     flex-wrap: wrap;
 }
 
-/* --- TARJETAS INTERACTIVAS CORREGIDAS --- */
+/* Tarjetas base PC */
 .servicio-card {
     border: 1px solid var(--color-crema);
     padding: 40px 20px;
@@ -171,17 +186,23 @@ nav a {
     background-color: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer; 
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.servicio-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: rgba(226, 220, 199, 0.1);
-}
-
-.servicio-card:active {
-    transform: scale(0.98);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+/* Efectos hover/active SOLO para PC (para no ensuciar el móvil) */
+@media (min-width: 769px) {
+    .servicio-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background-color: rgba(226, 220, 199, 0.1);
+    }
+    
+    .servicio-card:active {
+        transform: scale(0.98);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .servicio-card h3 {
@@ -196,9 +217,16 @@ nav a {
     margin-bottom: 0;
 }
 
-/* Sección Contacto (Formspree) */
+/* Ocultar los puntos indicadores del slider en PC */
+.slider-dots {
+    display: none;
+}
+
+/* =========================================
+   5. SECCIÓN CONTACTO (FORMSPREE)
+   ========================================= */
 .contacto {
-    background-color: var(--color-crema);
+    background-color: var(--color-fondo-principal); /* Tono cielo suave */
     color: var(--color-oliva-oscuro);
     padding: 80px 50px;
     display: flex;
@@ -269,7 +297,6 @@ nav a {
     margin-top: 10px;
     font-family: var(--fuente-texto);
     font-weight: bold;
-    transition: background-color 0.3s ease;
     padding: 15px 30px;
     background-color: var(--color-oliva-oscuro);
     color: var(--color-texto-claro);
@@ -277,32 +304,19 @@ nav a {
     font-size: 0.8rem;
     letter-spacing: 2px;
     border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-enviar:hover {
     background-color: #3a350d;
 }
 
-/* Responsividad unificada al final para orden */
-@media (max-width: 768px) {
-    .hero, .sobre-mi {
-        flex-direction: column;
-    }
-    .sobre-mi-texto, .sobre-mi-img-container {
-        width: 100%;
-    }
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .contacto {
-        padding: 60px 20px;
-    }
-}
-/* --- PIE DE PÁGINA (FOOTER) --- */
+/* =========================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================= */
 .footer {
-    background-color: var(--color-oliva-oscuro);
-    color: var(--color-texto-claro);
+    background-color: var(--color-rosa-suave); /* Combina con el header */
+    color: var(--color-oliva-oscuro);
     padding: 60px 50px 20px 50px;
     text-align: center;
 }
@@ -321,12 +335,12 @@ nav a {
 .footer-info h3 {
     font-size: 1.8rem;
     margin-bottom: 5px;
-    color: var(--color-texto-claro);
+    color: var(--color-oliva-oscuro);
 }
 
 .footer-info p {
     font-size: 1rem;
-    color: var(--color-crema);
+    color: var(--color-oliva-oscuro);
 }
 
 .footer-enlaces, .footer-sociales {
@@ -337,46 +351,47 @@ nav a {
 }
 
 .footer-enlaces a, .footer-sociales a {
-    color: var(--color-texto-claro);
+    color: var(--color-oliva-oscuro);
     text-decoration: none;
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .footer-enlaces a:hover, .footer-sociales a:hover {
-    color: var(--color-rosa-suave); 
+    opacity: 0.6; 
 }
 
 .footer-legal {
-    border-top: 1px solid rgba(226, 220, 199, 0.2); /* Línea divisoria muy sutil */
+    border-top: 1px solid rgba(90, 82, 21, 0.2); 
     padding-top: 20px;
     font-size: 0.85rem;
-    color: var(--color-crema);
+    color: var(--color-oliva-oscuro);
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* Responsividad para el Footer */
-@media (max-width: 768px) {
-    .footer-contenido {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .footer-enlaces, .footer-sociales {
-        text-align: center;
-    }
+.link-agencia {
+    color: var(--color-oliva-oscuro);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
-/* --- PÁGINA DE GRACIAS --- */
+
+.link-agencia:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+/* =========================================
+   7. PÁGINA DE GRACIAS (gracias.html)
+   ========================================= */
 .pantalla-gracias {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    min-height: 100vh;
     background: linear-gradient(to bottom, var(--color-fondo-principal), var(--color-crema));
     padding: 20px;
 }
@@ -387,7 +402,7 @@ nav a {
     border-radius: 15px;
     text-align: center;
     max-width: 500px;
-    box-shadow: 0 15px 30px rgba(90, 82, 21, 0.1); /* Sombra elegante */
+    box-shadow: 0 15px 30px rgba(90, 82, 21, 0.1);
 }
 
 .gracias-tarjeta h1 {
@@ -400,4 +415,91 @@ nav a {
     color: var(--color-oliva-oscuro);
     font-size: 1.1rem;
     margin-bottom: 30px;
+}
+
+/* =========================================
+   8. RESPONSIVIDAD (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    .hero, .sobre-mi {
+        flex-direction: column;
+    }
+    .sobre-mi-texto, .sobre-mi-img-container {
+        width: 100%;
+    }
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contacto {
+        padding: 60px 20px;
+    }
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-enlaces, .footer-sociales {
+        text-align: center;
+    }
+
+    /* Magia del Slider para Móvil */
+    .slider-contenedor {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .servicios-grid {
+        display: flex;
+        justify-content: flex-start; /* Primera tarjeta pegada a la izquierda */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 15px; 
+        padding: 20px; 
+        scroll-padding-left: 20px; /* Para que el snap frene donde corresponde */
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .servicios-grid::-webkit-scrollbar {
+        display: none; /* Chrome y Safari */
+    }
+
+    .servicio-card {
+        flex: 0 0 80%; /* Achicamos a 80% para que se vea la esquinita de la 2 */
+        scroll-snap-align: start; /* Se alinea a la izquierda al soltar el dedo */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* ESTA ES LA CLASE QUE DA EL ZOOM A LA TARJETA EN TURNO */
+    .servicio-card.activa {
+        transform: scale(1.05); /* El famoso zoom */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+        background-color: rgba(226, 220, 199, 0.1); /* Fondo crema sutil */
+    }
+
+    /* Puntos del Slider */
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-crema);
+        border-radius: 50%;
+        opacity: 0.5;
+        transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s;
+    }
+
+    .dot.active {
+        opacity: 1;
+        background-color: var(--color-texto-claro);
+        transform: scale(1.2);
+    }
 }
