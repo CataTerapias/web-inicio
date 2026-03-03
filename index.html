@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicología - Inicio</title>
     
-    <link rel="icon" href="assets/favicon.ico" type="image/png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -68,10 +68,12 @@
             <h2>Hablemos</h2>
             <p>Si tienes dudas o quieres dar el primer paso, escríbeme y me pondré en contacto contigo lo antes posible.</p>
             <form action="https://formspree.io/f/xnjbkgzq" method="POST" class="formulario">
+
+                <input type="hidden" name="_next" value="https://cataterapias.github.io/web-inicio/gracias.html">
                 
                 <div class="campo">
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Pérez" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Natalia Gamboa" required>
                 </div>
                 
                 <div class="campo">
@@ -93,6 +95,34 @@
             </form>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-info">
+                <h3>Catalina Berrios</h3>
+                <p>Psicóloga Clínica</p>
+            </div>
+            
+            <div class="footer-enlaces">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#enfoque">Enfoque</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            
+            <div class="footer-sociales">
+                <a href="https://www.instagram.com/cataa.berrios?igsh=MWNheXo2bHh3MXdnYw==" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">WhatsApp</a>
+                <a href="mailto:ps.catalinaberriosa@gmail.com" target="_blank">Correo</a>
+            </div>
+        </div>
+        
+        <div class="footer-legal">
+            <p>&copy; 2026 Catalina Berrios. Todos los derechos reservados.</p>
+            <p><small>Sitio web diseñado por <strong>S&F Atelier</strong></small></p>
+        </div>
+    </footer>
 
 </body>
 </html>

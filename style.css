@@ -9,6 +9,11 @@
     --fuente-texto: 'Arial', sans-serif;
 }
 
+/* Efecto de deslizamiento suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -157,11 +162,26 @@ nav a {
     flex-wrap: wrap;
 }
 
+/* --- TARJETAS INTERACTIVAS CORREGIDAS --- */
 .servicio-card {
     border: 1px solid var(--color-crema);
     padding: 40px 20px;
     width: 250px;
     text-align: center;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; 
+}
+
+.servicio-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(226, 220, 199, 0.1);
+}
+
+.servicio-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .servicio-card h3 {
@@ -176,19 +196,6 @@ nav a {
     margin-bottom: 0;
 }
 
-/* Responsividad básica */
-@media (max-width: 768px) {
-    .hero, .sobre-mi {
-        flex-direction: column;
-    }
-    .sobre-mi-texto, .sobre-mi-img-container {
-        width: 100%;
-    }
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
 /* Sección Contacto (Formspree) */
 .contacto {
     background-color: var(--color-crema);
@@ -200,7 +207,7 @@ nav a {
 
 .contacto-container {
     width: 100%;
-    max-width: 600px; /* Ancho ideal para que el formulario no se vea gigante en PC */
+    max-width: 600px;
     text-align: center;
 }
 
@@ -218,7 +225,7 @@ nav a {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    text-align: left; /* Alineamos las etiquetas a la izquierda */
+    text-align: left;
 }
 
 .campo {
@@ -244,15 +251,14 @@ nav a {
     color: var(--color-oliva-oscuro);
     font-family: var(--fuente-texto);
     font-size: 1rem;
-    border-radius: 8px; /* Bordes ligeramente redondeados */
+    border-radius: 8px;
     outline: none;
     transition: all 0.3s ease;
 }
 
-/* Efecto visual cuando el usuario hace clic en un campo */
 .campo input:focus, 
 .campo textarea:focus {
-    border-color: #3a350d; /* Oliva más oscuro */
+    border-color: #3a350d;
     box-shadow: 0 0 8px rgba(90, 82, 21, 0.2);
 }
 
@@ -264,15 +270,134 @@ nav a {
     font-family: var(--fuente-texto);
     font-weight: bold;
     transition: background-color 0.3s ease;
+    padding: 15px 30px;
+    background-color: var(--color-oliva-oscuro);
+    color: var(--color-texto-claro);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 25px;
 }
 
 .btn-enviar:hover {
-    background-color: #3a350d; /* Oscurece el botón al pasar el mouse */
+    background-color: #3a350d;
 }
 
-/* Responsividad */
+/* Responsividad unificada al final para orden */
 @media (max-width: 768px) {
+    .hero, .sobre-mi {
+        flex-direction: column;
+    }
+    .sobre-mi-texto, .sobre-mi-img-container {
+        width: 100%;
+    }
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
     .contacto {
         padding: 60px 20px;
     }
+}
+/* --- PIE DE PÁGINA (FOOTER) --- */
+.footer {
+    background-color: var(--color-oliva-oscuro);
+    color: var(--color-texto-claro);
+    padding: 60px 50px 20px 50px;
+    text-align: center;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--color-texto-claro);
+}
+
+.footer-info p {
+    font-size: 1rem;
+    color: var(--color-crema);
+}
+
+.footer-enlaces, .footer-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.footer-enlaces a, .footer-sociales a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover, .footer-sociales a:hover {
+    color: var(--color-rosa-suave); 
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(226, 220, 199, 0.2); /* Línea divisoria muy sutil */
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: var(--color-crema);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Responsividad para el Footer */
+@media (max-width: 768px) {
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-enlaces, .footer-sociales {
+        text-align: center;
+    }
+}
+/* --- PÁGINA DE GRACIAS --- */
+.pantalla-gracias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: linear-gradient(to bottom, var(--color-fondo-principal), var(--color-crema));
+    padding: 20px;
+}
+
+.gracias-tarjeta {
+    background-color: var(--color-texto-claro);
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 15px 30px rgba(90, 82, 21, 0.1); /* Sombra elegante */
+}
+
+.gracias-tarjeta h1 {
+    color: var(--color-oliva-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gracias-tarjeta p {
+    color: var(--color-oliva-oscuro);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
 }
