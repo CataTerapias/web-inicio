@@ -2,9 +2,9 @@
    PALETA DE COLORES Y AJUSTES GLOBALES
    ========================================= */
 :root {
-    --color-fondo-principal: #f2f4f6; /* Tono cielo suave */
-    --color-lila-suave: #cebdd6; /* NUEVO: Lila pastel relajante */
-    --color-texto-oscuro: #544d41; /* Marrón/gris suave para buena lectura */
+    --color-fondo-principal: #f2f4f6; 
+    --color-lila-suave: #cebdd6; 
+    --color-texto-oscuro: #544d41; 
     --color-rosa-suave: #dcc8c6;
     --color-crema: #e2dcc7;
     --color-texto-claro: #faf9f6;
@@ -12,15 +12,9 @@
     --fuente-texto: 'Arial', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--fuente-texto);
@@ -78,23 +72,12 @@ nav a {
     object-fit: cover;
 }
 
-.hero-text {
-    max-width: 500px;
-}
-
-.hero-text h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
+.hero-text { max-width: 500px; }
+.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-text p { margin-bottom: 30px; font-size: 1.1rem; }
 
 .btn {
-    background-color: var(--color-lila-suave); /* Botón lila */
+    background-color: var(--color-lila-suave);
     color: var(--color-texto-oscuro);
     padding: 15px 30px;
     text-decoration: none;
@@ -108,18 +91,12 @@ nav a {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.btn:hover {
-    background-color: #bfa8c7; /* Lila un poco más intenso al pasar el mouse */
-    transform: translateY(-2px);
-}
+.btn:hover { background-color: #bfa8c7; transform: translateY(-2px); }
 
 /* =========================================
    3. SECCIÓN SOBRE MÍ Y POLAROID
    ========================================= */
-.sobre-mi {
-    display: flex;
-    min-height: 500px;
-}
+.sobre-mi { display: flex; min-height: 500px; }
 
 .sobre-mi-texto {
     background-color: var(--color-rosa-suave);
@@ -130,10 +107,7 @@ nav a {
     justify-content: center;
 }
 
-.sobre-mi-texto h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
+.sobre-mi-texto h2 { font-size: 3rem; margin-bottom: 20px; }
 
 .sobre-mi-img-container {
     background-color: var(--color-crema);
@@ -144,7 +118,6 @@ nav a {
     padding: 50px;
 }
 
-/* --- EL PAPEL FOTOGRÁFICO --- */
 .marco-polaroid {
     background-color: white;
     padding: 15px 15px 40px 15px; 
@@ -155,15 +128,8 @@ nav a {
     max-width: 350px;
 }
 
-.sobre-mi-img {
-    width: 100%; 
-    height: auto;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    display: block; 
-}
+.sobre-mi-img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; display: block; }
 
-/* --- LA CINTA ADHESIVA CON FLORES (WASHI TAPE) --- */
 .marco-polaroid::before {
     content: ""; 
     position: absolute;
@@ -171,48 +137,34 @@ nav a {
     left: -25px; 
     width: 130px; 
     height: 35px; 
-    background-color: var(--color-lila-suave); /* Cinta lila */
+    background-color: var(--color-lila-suave); 
     opacity: 0.9; 
     transform: rotate(-20deg); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); 
     z-index: 2; 
-    
-    /* Textura de pequeñas flores blancas */
     background-image: 
         radial-gradient(white 20%, transparent 21%), 
         radial-gradient(white 20%, transparent 21%), 
         radial-gradient(white 20%, transparent 21%), 
         radial-gradient(white 20%, transparent 21%), 
         radial-gradient(white 20%, transparent 21%); 
-    background-position: 
-        0 0, 
-        0 -6px, 
-        0 6px, 
-        -6px 0, 
-        6px 0; 
+    background-position: 0 0, 0 -6px, 0 6px, -6px 0, 6px 0; 
     background-size: 15px 15px; 
     background-repeat: repeat; 
 }
 
 /* =========================================
-   4. SECCIÓN ENFOQUE CLÍNICO Y TARJETAS (PC)
+   4. SECCIÓN ENFOQUE CLÍNICO Y TARJETAS
    ========================================= */
 .enfoque-clinico {
-    background-color: var(--color-lila-suave); /* Fondo lila suave */
+    background-color: var(--color-lila-suave); 
     color: var(--color-texto-oscuro); 
     padding: 80px 50px;
     text-align: center;
 }
 
-.enfoque-clinico h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.enfoque-clinico p {
-    max-width: 600px;
-    margin: 0 auto 50px auto;
-}
+.enfoque-clinico h2 { font-size: 3rem; margin-bottom: 20px; }
+.enfoque-clinico p { max-width: 600px; margin: 0 auto 50px auto; }
 
 .servicios-grid {
     display: flex;
@@ -240,78 +192,120 @@ nav a {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         background-color: rgba(255, 255, 255, 0.3); 
     }
-    
-    .servicio-card:active {
-        transform: scale(0.98);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    }
+    .servicio-card:active { transform: scale(0.98); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); }
 }
 
-.servicio-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.servicio-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.servicio-card p { font-size: 0.9rem; margin-bottom: 0; }
+.slider-dots { display: none; }
 
-.servicio-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-.slider-dots {
-    display: none; 
-}
 /* =========================================
-   NUEVA SECCIÓN: MODALIDAD DE ATENCIÓN
+   5. NUEVA SECCIÓN: MODALIDAD DE ATENCIÓN
    ========================================= */
 .modalidad {
-    background-color: var(--color-crema); /* Usamos el crema para contrastar suavemente entre el lila y el celeste */
+    background-color: var(--color-crema); 
     padding: 80px 50px;
     text-align: center;
 }
 
-.modalidad h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.modalidad-sub {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-}
+.modalidad h2 { font-size: 3rem; margin-bottom: 10px; }
+.modalidad-sub { font-size: 1.1rem; margin-bottom: 40px; }
 
 .modalidad-grid {
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Evita que las tarjetas se estiren al abrir una */
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
+/* Tarjeta Acordeón */
 .modalidad-card {
     background-color: var(--color-texto-claro);
-    padding: 30px 20px;
     border-radius: 12px;
-    width: 220px;
+    width: 100%;
+    max-width: 280px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .modalidad-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(206, 189, 214, 0.4);
 }
 
-.modalidad-card .icono {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 15px;
+/* Cabecera clickeable */
+.modalidad-card summary {
+    padding: 30px 20px;
+    cursor: pointer;
+    list-style: none; /* Oculta la flecha por defecto del navegador */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: none;
 }
 
-.modalidad-card h3 {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.modalidad-card summary::-webkit-details-marker { display: none; }
+
+.modalidad-card .icono { font-size: 2.5rem; margin-bottom: 15px; }
+.modalidad-card h3 { 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    min-height: 60px; /* Reserva el espacio exacto para 2 líneas en todas las tarjetas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+/* Flecha personalizada */
+.flecha {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--color-lila-suave);
+    transition: transform 0.3s ease;
+}
+
+.modalidad-card[open] .flecha {
+    transform: rotate(180deg); /* La flecha gira al abrir */
+}
+
+/* El texto que se despliega */
+.modalidad-detalle {
+    padding: 0 20px 30px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(206, 189, 214, 0.3);
+    margin-top: -10px;
+    padding-top: 20px;
+    animation: deslizar-abajo 0.3s ease-out;
+    text-align: left;
+}
+
+@keyframes deslizar-abajo {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Manito animada */
+.mano-animada {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: pulsar-mano 2.5s infinite;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.1));
+}
+
+@keyframes pulsar-mano {
+    0% { transform: translate(15px, 15px) scale(1); opacity: 0; }
+    20% { transform: translate(0, 0) scale(1); opacity: 1; }
+    50% { transform: translate(0, 0) scale(0.85); opacity: 1; }
+    80% { transform: translate(0, 0) scale(1); opacity: 0; }
+    100% { transform: translate(15px, 15px) scale(1); opacity: 0; }
 }
 
 .modalidad-duracion {
@@ -319,61 +313,31 @@ nav a {
     display: inline-block;
     padding: 15px 30px;
     border-radius: 30px;
-    border: 2px dashed var(--color-lila-suave); /* Borde punteado lila para que combine con arriba */
+    border: 2px dashed var(--color-lila-suave);
     font-size: 1.1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 /* =========================================
-   5. SECCIÓN CONTACTO (FORMSPREE)
+   6. SECCIÓN CONTACTO (FORMSPREE)
    ========================================= */
 .contacto {
-    background: linear-gradient(to bottom, #dbe4ea, #f5ebd9);
+    background-color: #dbe4ea; 
     color: var(--color-texto-oscuro);
     padding: 80px 50px;
     display: flex;
     justify-content: center;
 }
 
-.contacto-container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
+.contacto-container { width: 100%; max-width: 600px; text-align: center; }
+.contacto-container h2 { font-size: 3rem; margin-bottom: 15px; }
+.contacto-container p { margin-bottom: 40px; font-size: 1.1rem; }
 
-.contacto-container h2 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
+.formulario { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.campo { display: flex; flex-direction: column; gap: 8px; }
+.campo label { font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-texto-oscuro); }
 
-.contacto-container p {
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-}
-
-.formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: left;
-}
-
-.campo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.campo label {
-    font-weight: bold;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-texto-oscuro);
-}
-
-.campo input, 
-.campo textarea {
+.campo input, .campo textarea {
     width: 100%;
     padding: 15px;
     border: 1px solid rgba(84, 77, 65, 0.3); 
@@ -386,36 +350,19 @@ nav a {
     transition: all 0.3s ease;
 }
 
-.campo input:focus, 
-.campo textarea:focus {
-    border-color: var(--color-lila-suave); /* Borde lila al escribir */
-    box-shadow: 0 0 8px rgba(206, 189, 214, 0.5); /* Sombra lila */
-}
+.campo input:focus, .campo textarea:focus { border-color: var(--color-lila-suave); box-shadow: 0 0 8px rgba(206, 189, 214, 0.5); }
 
 .btn-enviar {
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-    font-family: var(--fuente-texto);
-    font-weight: bold;
-    padding: 15px 30px;
-    background-color: var(--color-lila-suave);
-    color: var(--color-texto-oscuro);
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    border-radius: 25px;
+    border: none; cursor: pointer; width: 100%; margin-top: 10px; font-family: var(--fuente-texto);
+    font-weight: bold; padding: 15px 30px; background-color: var(--color-lila-suave); color: var(--color-texto-oscuro);
+    text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-enviar:hover {
-    background-color: #bfa8c7;
-    transform: translateY(-2px);
-}
+.btn-enviar:hover { background-color: #bfa8c7; transform: translateY(-2px); }
 
 /* =========================================
-   6. PIE DE PÁGINA (FOOTER)
+   7. PIE DE PÁGINA (FOOTER)
    ========================================= */
 .footer {
     background-color: var(--color-rosa-suave); 
@@ -424,222 +371,64 @@ nav a {
     text-align: center;
 }
 
-.footer-contenido {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    color: var(--color-texto-oscuro);
-}
-
-.footer-info p {
-    font-size: 1rem;
-    color: var(--color-texto-oscuro);
-}
-
-.footer-enlaces, .footer-sociales {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-align: left;
-}
-
-.footer-enlaces a, .footer-sociales a {
-    color: var(--color-texto-oscuro);
-    text-decoration: none;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease;
-}
-
-.footer-enlaces a:hover, .footer-sociales a:hover {
-    opacity: 0.6; 
-}
+.footer-contenido { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+.footer-info h3 { font-size: 1.8rem; margin-bottom: 5px; color: var(--color-texto-oscuro); }
+.footer-info p { font-size: 1rem; color: var(--color-texto-oscuro); }
+.footer-enlaces, .footer-sociales { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.footer-enlaces a, .footer-sociales a { color: var(--color-texto-oscuro); text-decoration: none; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.3s ease; }
+.footer-enlaces a:hover, .footer-sociales a:hover { opacity: 0.6; }
 
 .footer-legal {
     border-top: 1px solid rgba(84, 77, 65, 0.15); 
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: var(--color-texto-oscuro);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    padding-top: 20px; font-size: 0.85rem; color: var(--color-texto-oscuro);
+    display: flex; flex-direction: column; gap: 8px;
 }
-
-.link-agencia {
-    color: var(--color-texto-oscuro);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.link-agencia:hover {
-    opacity: 0.6;
-    text-decoration: underline;
-}
+.link-agencia { color: var(--color-texto-oscuro); text-decoration: none; transition: opacity 0.3s ease; }
+.link-agencia:hover { opacity: 0.6; text-decoration: underline; }
 
 /* =========================================
-   7. PÁGINA DE GRACIAS (gracias.html)
+   8. PÁGINA DE GRACIAS (gracias.html)
    ========================================= */
-.pantalla-gracias {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, var(--color-fondo-principal), var(--color-crema));
-    padding: 20px;
-}
-
-.gracias-tarjeta {
-    background-color: var(--color-texto-claro);
-    padding: 60px 40px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-}
-
-.gracias-tarjeta h1 {
-    color: var(--color-texto-oscuro);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.gracias-tarjeta p {
-    color: var(--color-texto-oscuro);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
+.pantalla-gracias { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(to bottom, var(--color-fondo-principal), var(--color-crema)); padding: 20px; }
+.gracias-tarjeta { background-color: var(--color-texto-claro); padding: 60px 40px; border-radius: 15px; text-align: center; max-width: 500px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05); }
+.gracias-tarjeta h1 { color: var(--color-texto-oscuro); font-size: 2.5rem; margin-bottom: 20px; }
+.gracias-tarjeta p { color: var(--color-texto-oscuro); font-size: 1.1rem; margin-bottom: 30px; }
 
 /* =========================================
-   8. RESPONSIVIDAD (CELULARES)
+   9. RESPONSIVIDAD (CELULARES)
    ========================================= */
 @media (max-width: 768px) {
-    .hero, .sobre-mi {
-        flex-direction: column;
-    }
+    .hero, .sobre-mi { flex-direction: column; }
+    .sobre-mi-texto, .sobre-mi-img-container { width: 100%; }
     
-    .sobre-mi-texto, .sobre-mi-img-container {
-        width: 100%;
-    }
+    /* Navbar en una sola línea */
+    header { flex-direction: column; gap: 15px; padding: 20px 10px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { margin: 0 8px; font-size: 0.75rem; }
     
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 10px; /* Reducimos el padding lateral para ganar más espacio en la pantalla */
-    }
+    .contacto { padding: 60px 20px; }
+    .footer-contenido { flex-direction: column; align-items: center; text-align: center; }
+    .footer-enlaces, .footer-sociales { text-align: center; }
 
-    /* Agregamos estas dos reglas para controlar los enlaces en el celular */
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; 
-    }
-
-    nav a {
-        margin: 0 8px; /* Reducimos drásticamente el margen que separaba las palabras */
-        font-size: 0.75rem; /* Achicamos un poquito la letra para asegurar que quepan todas */
-    }
-    
-    .contacto {
-        padding: 60px 20px;
-    }
-    
-    .footer-contenido {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .footer-enlaces, .footer-sociales {
-        text-align: center;
-    }
-
-    /* --- SLIDER MÓVIL ESTILO S&F ATELIER --- */
-    .slider-contenedor {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .enfoque-clinico {
-        padding: 60px 0; 
-    }
-    
-    .enfoque-clinico h2, 
-    .enfoque-clinico p {
-        padding: 0 20px; 
-    }
+    .slider-contenedor { width: 100%; overflow: hidden; }
+    .enfoque-clinico { padding: 60px 0; }
+    .enfoque-clinico h2, .enfoque-clinico p { padding: 0 20px; }
 
     .servicios-grid {
-        display: flex;
-        justify-content: flex-start; 
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 15px; 
-        
-        padding: 40px 10%; 
-        scroll-padding: 0 10%; 
-        scrollbar-width: none; 
+        display: flex; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto;
+        scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 15px; 
+        padding: 40px 10%; scroll-padding: 0 10%; scrollbar-width: none; 
     }
+    .servicios-grid::-webkit-scrollbar { display: none; }
     
-    .servicios-grid::-webkit-scrollbar {
-        display: none; 
-    }
+    .servicio-card { flex: 0 0 80%; scroll-snap-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; }
+    .servicio-card.activa { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); background-color: rgba(255, 255, 255, 0.4); }
 
-    .servicio-card {
-        flex: 0 0 80%; 
-        scroll-snap-align: center; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    }
+    .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 5px; }
+    .dot { width: 10px; height: 10px; background-color: var(--color-texto-oscuro); border-radius: 50%; opacity: 0.2; transition: opacity 0.3s ease, transform 0.3s ease; }
+    .dot.active { opacity: 0.8; transform: scale(1.2); }
 
-    .servicio-card.activa {
-        transform: scale(1.05); 
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); 
-        background-color: rgba(255, 255, 255, 0.4); 
-    }
-
-    /* Puntos del Slider */
-    .slider-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 5px; 
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-        background-color: var(--color-texto-oscuro);
-        border-radius: 50%;
-        opacity: 0.2; 
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .dot.active {
-        opacity: 0.8; 
-        transform: scale(1.2);
-    }
+    /* Ajustes Modalidad para Celular */
+    .modalidad { padding: 60px 20px; }
+    .modalidad-duracion { padding: 15px 20px; font-size: 1rem; }
 }
-/* Ajustes Modalidad para celular */
-    .modalidad {
-        padding: 60px 20px;
-    }
-    .modalidad-card {
-        width: 100%;
-        max-width: 300px;
-    }
-    .modalidad-duracion {
-        padding: 15px 20px;
-        font-size: 1rem;
-    }
