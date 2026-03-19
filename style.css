@@ -432,3 +432,66 @@ nav a {
     .modalidad { padding: 60px 20px; }
     .modalidad-duracion { padding: 15px 20px; font-size: 1rem; }
 }
+
+/* Estilos del Botón de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover (cuando pasas el mouse) */
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+/* Tooltip (El texto que aparece al lado) - Opcional */
+.tooltip-wa {
+    position: absolute;
+    right: 75px;
+    background-color: #333;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.whatsapp-btn:hover .tooltip-wa {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- AJUSTES PARA CELULAR (Responsive) --- */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px; /* Lo subimos un poco para que no choque con barras de navegación del cel */
+        right: 15px;
+        font-size: 25px;
+    }
+    
+    .tooltip-wa {
+        display: none; /* En celular mejor ocultar el texto para no tapar la pantalla */
+    }
+}
