@@ -69,7 +69,7 @@ Cal("init", "60min", {origin:"https://app.cal.com"});
 // --- 3. RENDERIZADO INLINE (FIJO EN LA WEB) ---
 Cal.ns["60min"]("inline", {
     elementOrSelector: "#calendario-embebido",
-    calLink: "catalina-berrios-vzgaoj/sesion-de-atencion-psicologica",
+    calLink: "ps.catalina-berrios/sesion-de-atencion-psicologica",
     config: {"layout":"month_view"}
 });
 
