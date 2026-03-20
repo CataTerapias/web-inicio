@@ -123,6 +123,17 @@
         <div class="modalidad-duracion">
             <p>⏳ Las sesiones tienen una duración aproximada de <strong>45 a 50 minutos</strong>.</p>
         </div>
+
+    </section>
+
+    <section id="seccion-agenda" class="booking-section">
+        <h2>Reserva tu hora de atención</h2>
+        
+        <div id="calendario-embebido" 
+            data-cal-link="sergio-ruiz-torres-zzh8az/60min" 
+            data-cal-namespace="60min" 
+            data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+        </div>
     </section>
 
     <section class="contacto" id="contacto">
@@ -187,17 +198,26 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
-        <a href="https://wa.me/56959498792?text=Buen%20día,%20quiero%20agendar%20una%20cita%20y%20tengo%20una%20consulta%20en%20relación%20a%20la%20atención%20psicológica" 
-    class="whatsapp-btn" 
-    target="_blank" 
-    rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span class="tooltip-wa">Escríbenos</span>
-    </a>
+        <div class="fab-container">
+            <div class="fab-menu">
+                <a href="https://wa.me/56959498792?text=Buen%20día,%20quiero%20agendar%20una%20cita%20y%20tengo%20una%20consulta%20en%20relación%20a%20la%20atención%20psicológica" class="fab-item wa" target="_blank" rel="noopener noreferrer">
+                    <span class="fab-label">WhatsApp</span>
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                
+                <button class="fab-item cal" data-cal-link="sergio-ruiz-torres-zzh8az/60min" data-cal-namespace="60min" data-cal-config='{"layout":"month_view"}'>
+                    <span class="fab-label">Agendar</span>
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
+            
+            <button class="fab-main" id="fab-toggle">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+            
+        <script src="script.js"></script> 
 </body>
 </html>

@@ -71,3 +71,58 @@ if (slider && dots.length > 0 && cards.length > 0) {
     // Simulamos un mini scroll al cargar la página para que la Tarjeta 1 parta con zoom
     setTimeout(() => slider.dispatchEvent(new Event('scroll')), 100);
 }
+// --- 1. MOTOR DE CAL.COM (El código que pegaste) ---
+(function (C, A, L) { 
+    let p = function (a, ar) { a.q.push(ar); }; 
+    let d = C.document; 
+    C.Cal = C.Cal || function () { 
+        let cal = C.Cal; 
+        let ar = arguments; 
+        if (!cal.loaded) { 
+            cal.ns = {}; 
+            cal.q = cal.q || []; 
+            d.head.appendChild(d.createElement("script")).src = A; 
+            cal.loaded = true; 
+        } 
+        if (ar[0] === L) { 
+            const api = function () { p(api, arguments); }; 
+            const namespace = ar[1]; 
+            api.q = api.q || []; 
+            if(typeof namespace === "string"){
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar); 
+            return;
+        } 
+        p(cal, ar); 
+    }; 
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+// --- 2. INICIALIZACIÓN CON TU NAMESPACE "60min" ---
+Cal("init", "60min", {origin:"https://app.cal.com"});
+
+// --- 3. RENDERIZADO INLINE (FIJO EN LA WEB) ---
+Cal.ns["60min"]("inline", {
+    elementOrSelector: "#calendario-embebido",
+    calLink: "sergio-ruiz-torres-zzh8az/60min",
+    config: {"layout":"month_view"}
+});
+
+// Configuración de interfaz (según tu código)
+Cal.ns["60min"]("ui", {
+    "hideEventTypeDetails": false,
+    "layout": "month_view"
+});
+
+
+
+// --- LÓGICA DEL BOTÓN FLOTANTE DESPLEGABLE (FAB) ---
+const fabToggle = document.getElementById('fab-toggle');
+const fabContainer = document.querySelector('.fab-container');
+
+if (fabToggle && fabContainer) {
+    fabToggle.addEventListener('click', () => {
+        fabContainer.classList.toggle('active');
+    });
+}

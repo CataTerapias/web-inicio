@@ -214,13 +214,12 @@ nav a {
 .modalidad-grid {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Evita que las tarjetas se estiren al abrir una */
+    align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
-/* Tarjeta Acordeón */
 .modalidad-card {
     background-color: var(--color-texto-claro);
     border-radius: 12px;
@@ -234,11 +233,10 @@ nav a {
     box-shadow: 0 15px 25px rgba(206, 189, 214, 0.4);
 }
 
-/* Cabecera clickeable */
 .modalidad-card summary {
     padding: 30px 20px;
     cursor: pointer;
-    list-style: none; /* Oculta la flecha por defecto del navegador */
+    list-style: none;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -249,18 +247,19 @@ nav a {
 .modalidad-card summary::-webkit-details-marker { display: none; }
 
 .modalidad-card .icono { font-size: 2.5rem; margin-bottom: 15px; }
+
 .modalidad-card h3 { 
     font-size: 1.1rem; 
     text-transform: uppercase; 
     letter-spacing: 1px; 
-    min-height: 60px; /* Reserva el espacio exacto para 2 líneas en todas las tarjetas */
+    min-height: 60px; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 0;
 }
-/* Flecha personalizada */
+
 .flecha {
     margin-top: 15px;
     font-size: 0.9rem;
@@ -268,11 +267,8 @@ nav a {
     transition: transform 0.3s ease;
 }
 
-.modalidad-card[open] .flecha {
-    transform: rotate(180deg); /* La flecha gira al abrir */
-}
+.modalidad-card[open] .flecha { transform: rotate(180deg); }
 
-/* El texto que se despliega */
 .modalidad-detalle {
     padding: 0 20px 30px 20px;
     font-size: 0.95rem;
@@ -289,7 +285,6 @@ nav a {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Manito animada */
 .mano-animada {
     position: absolute;
     bottom: 10px;
@@ -316,6 +311,26 @@ nav a {
     border: 2px dashed var(--color-lila-suave);
     font-size: 1.1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* =========================================
+   CALENDARIO EMBEBIDO (CAL.COM)
+   ========================================= */
+.booking-section {
+    padding: 80px 20px; 
+    text-align: center;
+    background-color: var(--color-texto-claro); 
+}
+
+#calendario-embebido {
+    width: 100%;
+    min-height: 700px;
+    border: none;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #calendario-embebido { min-height: 900px; }
 }
 
 /* =========================================
@@ -395,13 +410,104 @@ nav a {
 .gracias-tarjeta p { color: var(--color-texto-oscuro); font-size: 1.1rem; margin-bottom: 30px; }
 
 /* =========================================
-   9. RESPONSIVIDAD (CELULARES)
+   9. BOTÓN FLOTANTE DESPLEGABLE (FAB)
+   ========================================= */
+.fab-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.fab-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.fab-container.active .fab-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.fab-main {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-lila-suave);
+    color: var(--color-texto-oscuro);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fab-main:hover { background-color: #bfa8c7; }
+
+.fab-container.active .fab-main i {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.fab-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.fab-item i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.fab-item.wa i { background-color: #25d366; color: white; }
+.fab-item.cal i { background-color: var(--color-crema); color: var(--color-texto-oscuro); }
+.fab-item:hover i { transform: scale(1.1); }
+
+.fab-label {
+    background-color: var(--color-texto-claro);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--color-texto-oscuro);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: var(--fuente-texto);
+    font-weight: bold;
+}
+
+/* =========================================
+   10. RESPONSIVIDAD (CELULARES)
    ========================================= */
 @media (max-width: 768px) {
     .hero, .sobre-mi { flex-direction: column; }
     .sobre-mi-texto, .sobre-mi-img-container { width: 100%; }
     
-    /* Navbar en una sola línea */
     header { flex-direction: column; gap: 15px; padding: 20px 10px; }
     nav { display: flex; justify-content: center; flex-wrap: wrap; }
     nav a { margin: 0 8px; font-size: 0.75rem; }
@@ -428,70 +534,11 @@ nav a {
     .dot { width: 10px; height: 10px; background-color: var(--color-texto-oscuro); border-radius: 50%; opacity: 0.2; transition: opacity 0.3s ease, transform 0.3s ease; }
     .dot.active { opacity: 0.8; transform: scale(1.2); }
 
-    /* Ajustes Modalidad para Celular */
     .modalidad { padding: 60px 20px; }
     .modalidad-duracion { padding: 15px 20px; font-size: 1rem; }
-}
 
-/* Estilos del Botón de WhatsApp */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-/* Efecto Hover (cuando pasas el mouse) */
-.whatsapp-btn:hover {
-    background-color: #128c7e;
-    transform: scale(1.1);
-    color: #FFF;
-}
-
-/* Tooltip (El texto que aparece al lado) - Opcional */
-.tooltip-wa {
-    position: absolute;
-    right: 75px;
-    background-color: #333;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
-.whatsapp-btn:hover .tooltip-wa {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* --- AJUSTES PARA CELULAR (Responsive) --- */
-@media (max-width: 768px) {
-    .whatsapp-btn {
-        width: 50px;
-        height: 50px;
-        bottom: 15px; /* Lo subimos un poco para que no choque con barras de navegación del cel */
-        right: 15px;
-        font-size: 25px;
-    }
-    
-    .tooltip-wa {
-        display: none; /* En celular mejor ocultar el texto para no tapar la pantalla */
-    }
+    /* Ajustes FAB para Celular */
+    .fab-container { bottom: 15px; right: 15px; }
+    .fab-main { width: 55px; height: 55px; font-size: 22px; }
+    .fab-item i { width: 45px; height: 45px; font-size: 20px; }
 }
