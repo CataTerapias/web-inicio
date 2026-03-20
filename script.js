@@ -1,39 +1,3 @@
-// --- LÓGICA DEL FORMULARIO ---
-const formulario = document.querySelector('.formulario');
-
-if (formulario) {
-    formulario.addEventListener("submit", async function(event) {
-        event.preventDefault(); 
-        
-        const boton = formulario.querySelector('.btn-enviar');
-        const textoOriginal = boton.innerHTML;
-        boton.innerHTML = "Enviando...";
-        
-        const data = new FormData(formulario);
-        
-        try {
-            const response = await fetch(formulario.action, {
-                method: formulario.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                window.location.href = "gracias.html";
-                formulario.reset(); 
-            } else {
-                alert("Hubo un problema al enviar el mensaje. Por favor, revisa los datos e intenta de nuevo.");
-                boton.innerHTML = textoOriginal; 
-            }
-        } catch (error) {
-            alert("Hubo un problema de conexión. Revisa tu internet.");
-            boton.innerHTML = textoOriginal; 
-        }
-    });
-}
-
 // --- LÓGICA PARA EL SLIDER DE TARJETAS (SOLO MÓVIL) ---
 const slider = document.getElementById('slider-servicios');
 const dots = document.querySelectorAll('.dot');
@@ -105,7 +69,7 @@ Cal("init", "60min", {origin:"https://app.cal.com"});
 // --- 3. RENDERIZADO INLINE (FIJO EN LA WEB) ---
 Cal.ns["60min"]("inline", {
     elementOrSelector: "#calendario-embebido",
-    calLink: "sergio-ruiz-torres-zzh8az/60min",
+    calLink: "catalina-berrios-vzgaoj/sesion-de-atencion-psicologica",
     config: {"layout":"month_view"}
 });
 
@@ -114,8 +78,6 @@ Cal.ns["60min"]("ui", {
     "hideEventTypeDetails": false,
     "layout": "month_view"
 });
-
-
 
 // --- LÓGICA DEL BOTÓN FLOTANTE DESPLEGABLE (FAB) ---
 const fabToggle = document.getElementById('fab-toggle');

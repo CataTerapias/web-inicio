@@ -200,7 +200,7 @@ nav a {
 .slider-dots { display: none; }
 
 /* =========================================
-   5. NUEVA SECCIÓN: MODALIDAD DE ATENCIÓN
+   5. SECCIÓN: MODALIDAD DE ATENCIÓN
    ========================================= */
 .modalidad {
     background-color: var(--color-crema); 
@@ -314,68 +314,32 @@ nav a {
 }
 
 /* =========================================
-   CALENDARIO EMBEBIDO (CAL.COM)
+   6. CALENDARIO EMBEBIDO (CAL.COM)
    ========================================= */
 .booking-section {
     padding: 80px 20px; 
     text-align: center;
-    background-color: var(--color-texto-claro); 
+    background-color: #dbe4ea; /* El tono cielo suave que tenía el formulario */
+    color: var(--color-texto-oscuro);
+}
+
+.booking-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 #calendario-embebido {
     width: 100%;
+    /* Agregamos un ancho máximo y centrado para que en PC grandes no se estire de forma exagerada */
+    max-width: 1000px; 
+    margin: 20px auto 0 auto;
     min-height: 700px;
     border: none;
-    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
     #calendario-embebido { min-height: 900px; }
 }
-
-/* =========================================
-   6. SECCIÓN CONTACTO (FORMSPREE)
-   ========================================= */
-.contacto {
-    background-color: #dbe4ea; 
-    color: var(--color-texto-oscuro);
-    padding: 80px 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.contacto-container { width: 100%; max-width: 600px; text-align: center; }
-.contacto-container h2 { font-size: 3rem; margin-bottom: 15px; }
-.contacto-container p { margin-bottom: 40px; font-size: 1.1rem; }
-
-.formulario { display: flex; flex-direction: column; gap: 20px; text-align: left; }
-.campo { display: flex; flex-direction: column; gap: 8px; }
-.campo label { font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-texto-oscuro); }
-
-.campo input, .campo textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid rgba(84, 77, 65, 0.3); 
-    background-color: var(--color-texto-claro);
-    color: var(--color-texto-oscuro);
-    font-family: var(--fuente-texto);
-    font-size: 1rem;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.campo input:focus, .campo textarea:focus { border-color: var(--color-lila-suave); box-shadow: 0 0 8px rgba(206, 189, 214, 0.5); }
-
-.btn-enviar {
-    border: none; cursor: pointer; width: 100%; margin-top: 10px; font-family: var(--fuente-texto);
-    font-weight: bold; padding: 15px 30px; background-color: var(--color-lila-suave); color: var(--color-texto-oscuro);
-    text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-enviar:hover { background-color: #bfa8c7; transform: translateY(-2px); }
-
 /* =========================================
    7. PIE DE PÁGINA (FOOTER)
    ========================================= */
@@ -402,7 +366,7 @@ nav a {
 .link-agencia:hover { opacity: 0.6; text-decoration: underline; }
 
 /* =========================================
-   8. PÁGINA DE GRACIAS (gracias.html)
+   8. PÁGINA DE GRACIAS (OPCIONAL)
    ========================================= */
 .pantalla-gracias { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(to bottom, var(--color-fondo-principal), var(--color-crema)); padding: 20px; }
 .gracias-tarjeta { background-color: var(--color-texto-claro); padding: 60px 40px; border-radius: 15px; text-align: center; max-width: 500px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05); }
@@ -512,7 +476,6 @@ nav a {
     nav { display: flex; justify-content: center; flex-wrap: wrap; }
     nav a { margin: 0 8px; font-size: 0.75rem; }
     
-    .contacto { padding: 60px 20px; }
     .footer-contenido { flex-direction: column; align-items: center; text-align: center; }
     .footer-enlaces, .footer-sociales { text-align: center; }
 

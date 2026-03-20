@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalina | Psicóloga Clínica</title> <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-
+    <title>Catalina | Psicóloga Clínica</title> 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22/><text y=%22.85em%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2280%22>🧠</text></svg>">
-
     <meta name="theme-color" content="#dcc8c6">
-
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -22,8 +21,7 @@
         <nav>
             <a href="#enfoque">Enfoque</a>
             <a href="#modalidad">Modalidad</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+            <a href="#seccion-agenda">Agendar</a> </nav>
     </header>
 
     <section class="hero" id="inicio">
@@ -32,14 +30,13 @@
             <h1>Creciendo juntos en el camino del bienestar emocional.</h1>
             <p>Soy Catalina Berrios, Psicóloga Clínica Infanto-Juvenil. Acompaño a niños, adolescentes y sus familias en sus procesos emocionales, ofreciendo un espacio cálido, seguro y respetuoso.
             Mi objetivo es fortalecer el bienestar emocional en cada etapa del desarrollo, trabajando de manera cercana tanto con los niños como con sus padres, porque crecer acompañado hace la diferencia.</p>
-            <a href="#contacto" class="btn">Agenda tu sesión</a>
-        </div>
+            <a href="#seccion-agenda" class="btn">Agenda tu sesión</a> </div>
     </section>
 
     <section class="sobre-mi" id="sobre-mi">
         <div class="sobre-mi-texto">
             <h2>Sobre mi</h2>
-            <p>Soy Catalina Berrios, Licenciada y psicóloga Clínica con enfoque en atención infanto-juvenil.
+            <p>Soy Catalina Berrios, Licenciada y psicóloga Clínica con enfoque en atención infanto-juvenil.
             Mi vocación nace del profundo interés por comprender el mundo emocional de niños y adolescentes, acompañándolos en cada etapa de su desarrollo con respeto, empatía y compromiso profesional.</p><br>
             <p>Mi objetivo es fortalecer recursos emocionales, promover el bienestar y acompañar a cada familia en su propio proceso de crecimiento.</p>
         </div>
@@ -123,49 +120,15 @@
         <div class="modalidad-duracion">
             <p>⏳ Las sesiones tienen una duración aproximada de <strong>45 a 50 minutos</strong>.</p>
         </div>
-
     </section>
 
     <section id="seccion-agenda" class="booking-section">
-        <h2>Reserva tu hora de atención</h2>
+        <h2>Reserva tu cita</h2>
         
         <div id="calendario-embebido" 
-            data-cal-link="sergio-ruiz-torres-zzh8az/60min" 
+            data-cal-link="catalina-berrios-vzgaoj/sesion-de-atencion-psicologica" 
             data-cal-namespace="60min" 
             data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-        </div>
-    </section>
-
-    <section class="contacto" id="contacto">
-        <div class="contacto-container">
-            <h2>Hablemos</h2>
-            <p>Si tienes dudas o quieres dar el primer paso, escríbeme y me pondré en contacto contigo lo antes posible.</p>
-            <form action="https://formspree.io/f/mpqjvnly" method="POST" class="formulario">
-
-                <input type="hidden" name="_next" value="https://cataterapias.github.io/web-inicio/gracias.html">
-                
-                <div class="campo">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Natalia Gamboa" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-                </div>
-
-                <div class="campo">
-                    <label for="telefono">Número de teléfono (Para confirmar tu cita)</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. +56 9 1234 5678" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="mensaje">¿En qué te puedo ayudar?</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-enviar">Enviar mensaje</button>
-            </form>
         </div>
     </section>
 
@@ -179,10 +142,9 @@
             <div class="footer-enlaces">
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre-mi">Sobre Mí</a>
-                <a href="#enfoque">Enfoque</a>
+                <a href="#enfoque">Enfoque Clínico</a>
                 <a href="#modalidad">Modalidad de Atención</a>
-                <a href="#contacto">Contacto</a>
-            </div>
+                <a href="#seccion-agenda">Agendar</a> </div>
             
             <div class="footer-sociales">
                 <a href="https://www.instagram.com/ps.catalinaberrios?igsh=MThrdjIxMGptajI3Ng==" target="_blank">Instagram</a>
@@ -198,26 +160,25 @@
         </div>
     </footer>
 
-        <div class="fab-container">
-            <div class="fab-menu">
-                <a href="https://wa.me/56959498792?text=Buen%20día,%20quiero%20agendar%20una%20cita%20y%20tengo%20una%20consulta%20en%20relación%20a%20la%20atención%20psicológica" class="fab-item wa" target="_blank" rel="noopener noreferrer">
-                    <span class="fab-label">WhatsApp</span>
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                
-                <button class="fab-item cal" data-cal-link="sergio-ruiz-torres-zzh8az/60min" data-cal-namespace="60min" data-cal-config='{"layout":"month_view"}'>
-                    <span class="fab-label">Agendar</span>
-                    <i class="fas fa-calendar-alt"></i>
-                </button>
-            </div>
+    <div class="fab-container">
+        <div class="fab-menu">
+            <a href="https://wa.me/56959498792?text=Buen%20día,%20quiero%20agendar%20una%20cita%20y%20tengo%20una%20consulta%20en%20relación%20a%20la%20atención%20psicológica" class="fab-item wa" target="_blank" rel="noopener noreferrer">
+                <span class="fab-label">WhatsApp</span>
+                <i class="fab fa-whatsapp"></i>
+            </a>
             
-            <button class="fab-main" id="fab-toggle">
-                <i class="fas fa-plus"></i>
+            <button class="fab-item cal" data-cal-link="catalina-berrios-vzgaoj/sesion-de-atencion-psicologica" data-cal-namespace="60min" data-cal-config='{"layout":"month_view"}'>
+                <span class="fab-label">Agendar</span>
+                <i class="fas fa-calendar-alt"></i>
             </button>
         </div>
+        
+        <button class="fab-main" id="fab-toggle">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-            
-        <script src="script.js"></script> 
+    <script src="script.js"></script>
+
 </body>
 </html>
