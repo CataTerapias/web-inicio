@@ -385,6 +385,7 @@ nav a {
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
+    pointer-events: none; /* <--- NUEVO: Deja pasar los clics a través del espacio vacío */
 }
 
 .fab-menu {
@@ -418,6 +419,7 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: auto; /* <--- NUEVO: Reactiva los clics exclusivamente en los botones */
 }
 
 .fab-main:hover { background-color: #bfa8c7; }
@@ -436,6 +438,7 @@ nav a {
     border: none;
     cursor: pointer;
     outline: none;
+    pointer-events: auto; /* <--- NUEVO: Reactiva los clics exclusivamente en los botones */
 }
 
 .fab-item i {
@@ -476,6 +479,9 @@ nav a {
     nav { display: flex; justify-content: center; flex-wrap: wrap; }
     nav a { margin: 0 8px; font-size: 0.75rem; }
     
+    .footer {
+        padding-bottom: 85px; /* <--- NUEVO: Empuja tu firma hacia arriba para que no choque con el botón flotante */
+    }
     .footer-contenido { flex-direction: column; align-items: center; text-align: center; }
     .footer-enlaces, .footer-sociales { text-align: center; }
 
